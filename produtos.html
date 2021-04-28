@@ -1,0 +1,212 @@
+<!doctype html>
+
+	<html lang="pt-br">
+
+		<head>
+			
+			<meta charset="utf-8">
+			<meta http-equiv="X-UA-Compatible" content="IE=edge">
+			<meta name="viewport" content="width=device-width, initial-scale=1.0">
+			<meta name="keywords" content="girassol cosmetic, produtos de beleza veganos, cremes para pele, girassol, cosmético, pele">
+			<meta name="description" content="A Empresa Girassol Cosmetic vende produtos para pele veganos e a nossa missão é Cuidar da sua Beleza!">
+			<meta name="author" content="Ana Silva">
+			<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/css/bootstrap.min.css" integrity="sha384-B0vP5xmATw1+K9KRQjQERJvTumQW0nPEzvF6L/Z6nronJ3oUOFUFpCjEUQouq2+l" crossorigin="anonymous">
+			<link rel="stylesheet" href="./CSS/reset.css">
+			<link rel="stylesheet" href="./CSS/style.css">
+			<link rel="icon" href="./img/icon.png">
+			<title>Girassol Cosmetic</title>
+			
+		</head>
+		
+		<body>
+
+			<div class="geral">
+				
+				<header id="cabecalho">
+						
+					<section>
+						
+						<nav class="navbar navbar-expand-sm navbar-light" style="background-color:#FAE588; font-size:20px; font-family:montserrat alternates;">
+								
+							<a class="navbar-brand" href="https://www.instagram.com/girassolprodbeleza_/" target="_blank"><img src="./img/instagram.png" alt="Logo do Instagram" id="midia"></a>
+							<a class="navbar-brand" href="https://web.whatsapp.com/" target="_blank"><img src="./img/whatsapp.png" alt="Logo do Whatsapp"
+							id="midia"></a>
+								
+							<button class="navbar-toggler" data-toggle="collapse" href="#menu"><span class="navbar-toggler-icon"></span></button>
+								
+							<div id="menu" class="collapse navbar-collapse justify-content-end">
+								
+								<ul class="navbar-nav">
+									
+									<li class="nav-item">
+										
+										<a class="nav-link" href="index.html">Home</a>
+										
+									</li>
+										
+									<li class="nav-item">
+										
+										<a class="nav-link" href="sobre.html">Sobre Nós</a>
+										
+									</li>
+										
+									<li class="nav-item">
+										
+										<a class="nav-link" href="produtos.html">Produtos</a>
+										
+									</li>
+										
+									<li class="nav-item">
+										
+										<a class="nav-link" href="cadastro.html">Cadastro</a>
+										
+									</li>
+										
+									<li class="nav-item">
+										
+										<a class="nav-link" href="carrinho.html">Carrinho</a>
+										
+									</li>
+									
+								</ul>
+							</div>
+						</nav>
+						
+					</section>
+						
+					<section id="logo">
+						
+						<a href="index.html"><img src="./img/logo.png" alt="Logo da Girassol Cosmetic" id="logo"></a>
+						
+					</section>
+						
+				</header>
+
+				<main id="conteudo2">
+
+					<h1 class="titulo">Produtos</h1>
+					
+					<div id="produtos"></div>
+
+					<h1 class="titulo">Carrinho</h1>
+
+					<div id="carrinho"></div>
+					
+				<main>
+
+			</div>
+
+			<script>
+
+				let itens = [ 
+							{
+								id: 0, 
+								nome: "Creme Aloe Vera",
+								img: "./img/3.jpg",
+								valor: 35.00,
+								quantidade: 0 
+							}, 
+							{
+								id: 1,
+								nome: "Creme de Rosas",
+								img: "./img/7.jpg",
+								valor:30.00,
+								quantidade: 0
+							},
+							{
+								id: 2, 
+								nome: "Creme de Óleo de Coco",
+								img: "./img/8.jpg",
+								valor:20.00,
+								quantidade: 0
+							},
+							{
+								id: 3, 
+								nome: "Creme de Jojoba",
+								img: "./img/4.jpg",
+								valor:45.00,
+								quantidade: 0
+							},
+							{
+								id: 4, 
+								nome: "Creme de Maracujá",
+								img: "./img/1.jpg",
+								valor:19.00,
+								quantidade: 0
+							},
+							{
+								id: 5, 
+								nome: "Creme de Malaleuca",
+								img: "./img/6.jpg",
+								valor:45.00,
+								quantidade: 0
+							},
+						];
+
+						function carregarLoja() {
+                			let loja = document.querySelector("#produtos")
+								itens.forEach((i) => {
+								loja.innerHTML += `
+								
+									<div>
+										<h2>${i.nome}</h2>
+										<img src="${i.img}">
+										<h3>R$ ${i.valor},00</h3>
+										<button><a class="adiciona" key="${i.id}" href="#">Comprar</a></button>
+									</div>
+								`;
+								})                
+
+							}
+							carregarLoja();
+
+						carregarCarrinho = () => {
+							let itensLoja = document.querySelector("#carrinho");
+							let subTotal = 0;
+							let total = 0;
+
+							itensLoja.innerHTML = "";
+
+							itens.forEach((i) => {
+								if(i.quantidade > 0) {
+									subTotal = i.valor * i.quantidade;
+									total += subTotal;
+
+									itensLoja.innerHTML += `
+										<div>
+											<h3>  ${i.nome} 
+												| Preço: R$ ${i.valor} 
+												|Quantidade: ${i.quantidade} 
+												| Sub-total R$ ${subTotal.toFixed(2)}</h3>
+											<hr>
+										</div>                    
+									`;
+								}
+							})
+
+							itensLoja.innerHTML += `
+							<div>
+								<h2>Total: R$ ${total.toFixed(2)}</h2>
+							</div>                
+							`;
+						}
+
+						let carrinho = document.querySelectorAll(".adiciona");
+							for (i in itens) {
+								carrinho[i].addEventListener('click', function() {
+									let key = this.getAttribute('key');
+									itens[key].quantidade++;                    
+									carregarCarrinho();
+								})
+						}
+
+
+			</script>
+
+			<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+			<script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js" integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN" crossorigin="anonymous"></script>
+			<script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/js/bootstrap.min.js" integrity="sha384-+YQ4JLhjyBLPDQt//I+STsc9iw4uQqACwlvpslubQzn4u2UU2UFM80nGisd026JF" crossorigin="anonymous"></script>
+
+		</body>
+
+	</html>

@@ -1,0 +1,205 @@
+
+@font-face {
+    font-family: playfair display;
+    src: url('font/PlayfairDisplay-VariableFont_wght.ttf');
+    font-family: montserrat alternates;
+    src: url('font/MontserratAlternates-SemiBold.ttf');
+}
+
+body{
+	background-color:#FDFFB6;
+}
+
+/*Configurações da página de fundo da home*/
+#geral1{
+	width:100%;
+	height:100vh;
+	background-image: linear-gradient(rgba(0,0,0,1.0), rgba(250,229,136,0.6)), url("../img/fundo1.jpg");
+	background-size:cover;
+	background-repeat:no-repeat;
+	background-position:center;
+}
+
+/*Configurações das logos das mídia sociais*/
+#midia{
+	width:30px;
+	height:30px;
+}
+
+#logo{
+	margin:5px;
+
+}
+
+/*Configurações da home*/
+#pag1{
+	text-align:center;
+	margin:7% 0;
+}
+#pag1 h1{
+	font-size:35px;
+	padding-bottom:30px;
+	font-family:playfair display;
+	color:#FFBD59;
+}
+
+#pag1 a{
+	text-decoration:none;
+	font-size:20px;
+	font-family:montserrat alternates;
+	color:#DF2A99;
+}
+#pag1 button{
+	text-align:center;
+	font-weight:bold;
+	cursor:pointer;
+	width:150px;
+	height:35px;
+	border-radius:20px;
+	border: 2px solid #FAE588;
+	background-color:#FDFFB6;
+}
+#pag1 button:hover{
+    background-color:transparent;
+}
+#pag1 a:hover{
+	color:white;
+}
+
+
+/*configurações do conteudo do sobre nós*/
+.conteudo{
+    padding-top: 2%;
+    width: 100%;
+    text-align: center;
+}
+.titulo{
+    padding-bottom: 2%;
+    text-align: center;
+    color: #C41C69;
+    font-size:35px;
+    font-family: playfair display;
+}
+.about{
+    text-align: justify;
+    padding-left: 10%;
+    padding-right: 10%;
+    line-height: 150%;
+    padding-bottom: 2%;
+}
+.dona{
+    border-radius: 20px;
+}
+.conteudo img{
+	width:150px;
+	height:150px;
+}
+
+/*configurações do conteudo2 da página de produtos*/
+#produtos{
+	padding: 50px;
+}
+#conteudo2{
+    text-align: center;
+    font-size: 20px;
+	margin: 20px;
+}
+#conteudo2 img{
+	width: 320px;
+	height: 218px;
+	border-radius: 20px;
+}
+#conteudo2 h2,h3{
+    margin: 20px 0;
+	color: #DF2A99;
+}
+#conteudo2 h2{
+	font-family:playfair display;
+	font-size:30px;
+}
+#conteudo2 h3{
+	font-family:montserrat alternates;
+	font-size:25px;
+}
+
+#conteudo2 a{
+	text-decoration:none;
+	font-size:20px;
+	font-family:montserrat alternates;
+	color:#DF2A99;
+}
+#conteudo2 button{
+	text-align:center;
+	font-weight:bold;
+	cursor:pointer;
+	width:150px;
+	height:35px;
+	border-radius:15px;
+	border: 2px solid #FAE588;
+	background-color:#FDFFB6;
+}
+#conteudo2 button:hover{
+    background-color:#DF2A99;
+	border:2px solid #DF2A99;
+}
+#conteudo2 a:hover{
+	color:#FDFFB6;
+}
+
+/*configurações do cadastro*/
+.login{
+    text-align: center;
+}
+.cadastro{
+    text-align: center;
+    padding-bottom: 2%;
+}
+.chama{
+	margin-bottom:4%;
+	font-size:20px;
+	font-family:montserrat alternates;
+}
+.chama a{
+	text-decoration:none;
+	color:#FFBD59;
+}
+input{
+    background-color:transparent;
+    border-bottom:2px solid #FFBD59;
+	border-right:none;
+    border-left:none;
+	border-top:none;
+    font-family: montserrat alternates;
+    color:#C41C69;
+}
+.cadastro textarea:focus, input:focus{
+	box-shadow:0;
+	outline:0;
+}
+#enviar{
+	border:2px solid #FFBD59;
+	padding:5px 20px;
+	cursor:pointer;
+	border-radius:10px;
+	margin:0 20px;
+	margin-top:20px;
+	font-size:20px;
+	
+}
+#enviar:hover{
+	background-color:#DF2A99;
+	border:2px solid #DF2A99;
+	color:#FFBD59;
+	border-radius:10px;
+}
+
+/*configurações da página shop*/
+.compras{
+    text-align: center;
+}
+.subtitulo{
+    padding: 20px 0;
+    font-family: montserrat alternates;
+    color: #FFBD59;
+    font-size: 18px;
+}
